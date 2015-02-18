@@ -3,11 +3,6 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.util.Scanner;
 
-//Try
-//Vegetable Valley Piano.mp3
-//Anthem of Denial v2.mp3
-//Mimas Full.mp3
-
 public class MusicAnalyzer
 {
   static int[] value(String in){
