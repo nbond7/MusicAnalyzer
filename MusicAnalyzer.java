@@ -3,11 +3,6 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.util.Scanner;
 
-//Try
-//Vegetable Valley Piano.mp3
-//Anthem of Denial v2.mp3
-//Mimas Full.mp3
-
 public class MusicAnalyzer
 {
   static int[] value(String in){
@@ -55,7 +50,7 @@ public class MusicAnalyzer
     int k = 25;
     
     if(picture[x%w].length != 0)
-      h = (float)(values.length*0.01);
+      h = (float)((picture[2][0]%255)/255.0);
     if(picture[(x+1)%w].length != 0)
       s = (float)(picture[(x+1)%w][0]*0.01);
     if(picture[(x+2)%w].length != 0)
@@ -69,8 +64,9 @@ public class MusicAnalyzer
     r = hsv.getRed();
     g = hsv.getGreen();
     b = hsv.getBlue();
+    int a = fix(15000/w);
     
-    return new Color(r, g, b, 15000/w);
+    return new Color(r, g, b, a);
   }
   
   static int height(int[] values, int hi){
@@ -121,7 +117,6 @@ public class MusicAnalyzer
     Scanner key = new Scanner(System.in);
     System.out.println("File name? ");
     String fileName = key.nextLine();
-    //System.out.println("Shortening Factor? ");
     int shorteningFactor = 1;
     int hi = 640;
     
@@ -136,7 +131,8 @@ public class MusicAnalyzer
     g.setColor(Color.black);
     g.fillRect(0, 0, Math.min(picture.length/shorteningFactor, maxWi), hi);
     
-    draw(picture, g, hi, maxWi);
+    //while(true)
+      draw(picture, g, hi, maxWi);
   }
   
   static void print(int[] n){
